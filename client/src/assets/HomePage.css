@@ -1,0 +1,86 @@
+.home-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a40, #2c2c7a, #1a1a40);
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: 3%; 
+    left: 23%;
+    transform: translateX(-50%);
+    width: 800px; 
+    opacity: 0.9;  
+    animation: floatAnimation 4s ease-in-out infinite; 
+}
+
+.selection {
+    position: relative;
+    top: 50px;
+    margin: 20px 0;
+    z-index: 1;
+}
+
+.selection h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(45deg, #ffcc00, #ffaa00);
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ffaa00, #ff8800);
+    transform: scale(1.05);
+}
+
+.selected {
+    background: linear-gradient(45deg, #ffaa00, #ff8800);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: black;
+}
+
+.start-btn {
+    position: relative;
+    top: 30px;
+    background-color: #ff4757;
+    color: black;
+    font-size: 22px;
+    padding: 15px 25px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+

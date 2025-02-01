@@ -1,0 +1,29 @@
+.game-over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.game-over h2 {
+    font-size: 36px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+.game-over p {
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+.game-over button {
+    background: #16213e;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid gold;
+}

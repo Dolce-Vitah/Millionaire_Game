@@ -1,0 +1,26 @@
+.lifelines {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.lifelines button {
+    position: relative;
+    bottom: 250px;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 15px;
+    background: #16213e;
+    color: white;
+    font-weight: lighter;
+    border: 1px solid gold;
+    border-radius: 20px;
+}
+
+.lifelines button:hover {
+    background-color: #0f3460;
+}
+
+.lifelines button:disabled {
+    opacity: 0.5;
+}

@@ -1,0 +1,37 @@
+.score-board {
+    position: fixed;
+    top: 50px;
+    left: 40px;
+    width: 150px;
+    text-align: center;
+    background-color: #16213e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid gold;
+}
+
+.score-board h3 {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+.score-board ul {
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+.score-board li {
+    color: white;
+    text-align: center;
+    font-size: large;
+    padding: 1.5px;
+}
+
+.score-board .highlight {
+    font-weight: bold;
+    color: #ffcc00;
+    background-color: #0f3460;
+    padding: 1.5px;
+    border-radius: 5px;
+}
