@@ -12,7 +12,6 @@ function createWindow() {
     });
 
     win.loadFile(path.join(__dirname, "client", "public", "index.html"));
-    console.log(path.join(__dirname, "client", "public", "index.html"));
 }
 
 app.on("window-all-closed", () => {
@@ -27,4 +26,4 @@ app.on("activate", () => {
     }
 });
 
-app.on("ready", createWindow);
+app.whenReady().then(() => { createWindow(); })
