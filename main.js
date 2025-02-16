@@ -10,8 +10,7 @@ function createWindow() {
         },
     });
 
-    win.loadURL(`file://${path.join(__dirname, "client", "public", "index.html")}`);
-    win.webContents.openDevTools();
+    win.loadFile("index.html");
 }
 
 app.whenReady().then(createWindow);
