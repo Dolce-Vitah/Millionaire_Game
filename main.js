@@ -11,6 +11,7 @@ function createWindow() {
     });
 
     win.loadURL(`file://${path.join(__dirname, "client", "public", "index.html")}`);
+    win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
