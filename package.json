@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "electron .",
     "server": "cd server && npm start",
     "client": "cd client && npm start"
   },
