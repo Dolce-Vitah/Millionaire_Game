@@ -11,7 +11,10 @@ function createWindow() {
         },
     });
 
-    win.loadURL(`file://${path.join(__dirname, "client", "public", "index.html")}`);
+    win.loadURL(`file://${path.join(__dirname, "client", "public", "index.html")}`)
+        .then(() => console.log("URL loaded successfully"))
+        .catch((err) => console.error("Error loading URL: ", err));
+
     win.webContents.openDevTools();
 }
 
