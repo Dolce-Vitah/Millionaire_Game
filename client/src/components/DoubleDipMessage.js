@@ -1,14 +1,12 @@
 import React from "react";
-import { Message } from "semantic-ui-react";
 import "./assets/DoubleDipMessage.css";
 
 const DoubleDipMessage = () => {
     return (
-        <Message
-            className="double-dip-message"
-            header="Второй шанс активирован!"
-            content="Если ответите неправильно, есть возможность попробовать еще раз."
-        />
+        <div className="double-dip-message">
+            <h3>Второй шанс активирован!</h3>
+            <p>Если ответите неправильно, есть возможность попробовать еще раз.</p>
+        </div>
     );
 }
 
