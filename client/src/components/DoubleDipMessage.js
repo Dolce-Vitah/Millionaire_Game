@@ -1,5 +1,5 @@
 import React from "react";
-import "./assets/DoubleDipMessage.css";
+import "../assets/DoubleDipMessage.css";
 
 const DoubleDipMessage = () => {
     return (
