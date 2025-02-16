@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require("electron");
-const path = require("node:path");
+const path = require("path");
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -12,6 +12,7 @@ function createWindow() {
     });
 
     win.loadFile(path.join(__dirname, "client", "public", "index.html"));
+    console.log(path.join(__dirname, "client", "public", "index.html"));
 }
 
 app.on("window-all-closed", () => {
