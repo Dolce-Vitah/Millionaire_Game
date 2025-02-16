@@ -11,7 +11,7 @@ function createWindow() {
         },
     });
 
-    win.loadFile(path.join(__dirname, "client", "public", "index.html"));
+    win.loadURL("http://localhost:3000");
 }
 
 app.on("window-all-closed", () => {
