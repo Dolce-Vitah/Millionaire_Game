@@ -8,6 +8,7 @@ import Lifelines from "./Lifelines";
 import ScoreBoard from "./ScoreBoard";
 import AudiencePoll from "./AudiencePoll";
 import PhoneFriend from "./PhoneFriend";
+import DoubleDipMessage from "./DoubleDipMessage";
 
 const GameScreen = () => {
     const location = useLocation();
@@ -22,6 +23,7 @@ const GameScreen = () => {
     const [gameOver, setGameOver] = useState(false);
     const [audienceData, setAudienceData] = useState(null);
     const [friendGuess, setFriendGuess] = useState(null);
+    const [doubleDipActivated, setDoubleDipActivated] = useState(false);
     const [usedLifelines, setUsedLifelines] = useState({
         "fifty-fifty": false,
         "ask-audience": false,
@@ -65,9 +67,12 @@ const GameScreen = () => {
         const response = await submitAnswer(gameId, answer);
         if (response.correct) {
             updateGameState(gameId);
-        } else {
+        } else if (!response.doubleDipActivated){
             setGameOver(true);
             setScore(response.finalScore);
+        }
+        if (doubleDipActivated) {
+            setDoubleDipActivated(false);
         }
     };
 
@@ -84,6 +89,8 @@ const GameScreen = () => {
             setTimeout(() => {
                 setFriendGuess(null);
             }, 4000);
+        } else if (type === "double-dip") {
+            setDoubleDipActivated(true);
         }
         setUsedLifelines((prev) => ({...prev, [type] : true}));
     };
@@ -112,6 +119,7 @@ const GameScreen = () => {
 
                     {audienceData && <AudiencePoll votes={audienceData} />}
                     {friendGuess && <PhoneFriend decision={friendGuess} difficulty={currentQuestion.difficulty} />}
+                    {doubleDipActivated && <DoubleDipMessage />}
                 </>
             )}
         </div>

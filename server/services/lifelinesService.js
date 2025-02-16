@@ -94,6 +94,11 @@ const useLifeline = (gameId, type, format) => {
             );
             return { guess: String.fromCharCode(65 + votes.indexOf(finalAnswer)) };
         }
+        case "double-dip": {
+            game.doubleDipActivated = true;
+            updateGameState(gameId, game);
+            return { };
+        }
     }
 }
 

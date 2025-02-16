@@ -23,6 +23,7 @@ const createGame = (gameId, questions) => {
             "phone-friend": false,
             "double-dip": false,
         },
+        doubleDipActivated: false,
         lastReachedMilestone: [0],
         gameOver: false,
     };

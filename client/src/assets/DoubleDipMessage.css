@@ -1,0 +1,20 @@
+.double-dip-message {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 16px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+.double-dip-message h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.double-dip-message p {
+    font-size: 16px;
+    margin: 0;
+}

@@ -38,14 +38,21 @@ router.post('/answer', (req, res) => {
             game.gameOver = true;
             game.score = prizeValues.at(-1);
         }
+        if (game.doubleDipActivated) {
+            game.doubleDipActivated = false;
+        }
 
         updateGameState(gameId, game);
         return res.json({ correct: true });
+    } else if (game.doubleDipActivated) {
+        game.doubleDipActivated = false;
+        updateGameState(gameId, game);
+        return res.json({ correct: false, doubleDipActivated: true });
     } else {
         game.gameOver = true;
         game.score = game.lastReachedMilestone.at(-1);
         updateGameState(gameId, game);
-        return res.json({ correct: false, finalScore: game.score });
+        return res.json({ correct: false, finalScore: game.score, doubleDipActivated: false });
     }
 });
 
