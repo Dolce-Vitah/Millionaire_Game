@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow } = require("electron/main");
 const path = require("path");
 
 function createWindow() {
@@ -11,11 +11,7 @@ function createWindow() {
         },
     });
 
-    win.loadURL(`file://${path.join(__dirname, "client", "public", "index.html")}`)
-        .then(() => console.log("URL loaded successfully"))
-        .catch((err) => console.error("Error loading URL: ", err));
-
-    win.webContents.openDevTools();
+    win.loadFile(`${path.join(__dirname, "client", "public", "index.html")}`);
 }
 
 app.on("window-all-closed", () => {
