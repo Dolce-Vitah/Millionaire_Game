@@ -1,9 +1,9 @@
 {
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "server": "cd server && npm start",
-    "client": "cd client && npm start"
+    "start-react": "cd client && npm start",
+    "start-electron": "electron .",
+    "start": "concurrently \"npm run start-react\" \"npm run start-electron\""
   },
   "dependencies": {
     "concurrently": "^9.1.2",
