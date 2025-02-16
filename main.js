@@ -11,7 +11,7 @@ function createWindow() {
         },
     });
 
-    win.loadURL(`file:///${path.join(__dirname, "client", "public", "index.html")}`);
+    win.loadFile(path.join(__dirname, "client", "public", "index.html"));
 }
 
 app.on("window-all-closed", () => {
