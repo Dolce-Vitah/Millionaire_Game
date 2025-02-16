@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron/main");
+const { app, BrowserWindow } = require("electron");
 const path = require("path");
 
 function createWindow() {
@@ -11,7 +11,7 @@ function createWindow() {
         },
     });
 
-    win.loadFile(`${path.join(__dirname, "client", "public", "index.html")}`);
+    win.loadURL(`file:///${path.join(__dirname, "client", "public", "index.html")}`);
 }
 
 app.on("window-all-closed", () => {
