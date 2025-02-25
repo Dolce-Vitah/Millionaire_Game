@@ -5,7 +5,7 @@ const { exec } = require("child_process");
 let mainWindow;
 
 const startServer = () => {
-    exec("npm run server", { cwd: path.join(__dirname, "server") }, (err, stdout, stderr) => {
+    exec("cd server && node server.js", (err, stdout, stderr) => {
         if (err) {
             console.error(err);
             return;
