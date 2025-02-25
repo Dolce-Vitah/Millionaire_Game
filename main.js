@@ -8,7 +8,7 @@ async function createWindow() {
   console.log("Waiting for React...");
 
   try {
-    await waitOn({ resources: [CLIENT_URL], timeout: 10000 }); 
+    await waitOn({ resources: [CLIENT_URL], timeout: 15000 }); 
     console.log("React is ready! Launching Electron...");
 
     let mainWindow = new BrowserWindow({
