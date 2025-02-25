@@ -7,11 +7,11 @@
     "start": "concurrently \"npm run start-react\" \"npm run start-electron\" \"npm run start-server\""
   },
   "dependencies": {
-    "concurrently": "^9.1.2",
     "cors": "^2.8.5",
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "electron": "^34.2.0",
     "wait-on": "^8.0.2"
   }
