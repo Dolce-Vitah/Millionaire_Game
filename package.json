@@ -5,7 +5,7 @@
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "electron": "wait-on http://localhost:3000 && electron .",
-    "start": "concurrently \"npm run client\" \"npm run server\" \"npm run electron\""  
+    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run electron\""  
   },
   "dependencies": {
     "cors": "^2.8.5",
