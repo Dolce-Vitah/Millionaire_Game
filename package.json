@@ -1,10 +1,9 @@
 {
   "main": "main.js",
   "scripts": {
-    "start": "concurrently \"npm run start-react\" \"npm run start-server\" \"npm run start-electron\"",
-    "start-react": "cd client && npm start",
-    "start-server": "cd server && node server.js",
-    "start-electron": "electron ."
+    "start": "concurrently \"npm run start-react\" \"npm run start-server\"",
+    "start-react": "cd client && npm start && electron .",
+    "start-server": "cd server && node server.js"   
   },
   "dependencies": {
     "cors": "^2.8.5",
