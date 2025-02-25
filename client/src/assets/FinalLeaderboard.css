@@ -1,0 +1,202 @@
+.final-leaderboard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1f2a67 0%, #000 80%);
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.final-leaderboard h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffd700; 
+    text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+}
+
+.final-leaderboard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 850px;
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5);
+    overflow: hidden;
+}
+
+.final-leaderboard .leaderboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;   
+    background: rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.final-leaderboard li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.final-leaderboard li:last-child {
+    border-bottom: none;
+}
+
+.final-leaderboard li.leader {
+    font-weight: bold;
+    color: #ffd700; 
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.final-leaderboard .leaderboard-header .player-nickname {
+    flex: 1; 
+    text-align: left; 
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffd700; 
+}
+
+.final-leaderboard .player-nickname {
+    flex: 1;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.final-leaderboard .leaderboard-header .player-questions {
+    flex: 1; 
+    text-align: center; 
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffd700; 
+}
+
+.final-leaderboard .player-questions {
+    flex: 1; 
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.final-leaderboard .leaderboard-header .player-score {
+    flex: 1; 
+    text-align: right; 
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffd700; 
+}
+
+.final-leaderboard .player-score {
+    flex: 1;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.final-leaderboard button {
+    margin-top: 45px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #1a237e, #311b92);
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.final-leaderboard button:hover {
+    background: linear-gradient(135deg, #311b92, #1a237e);
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+}
+
+.final-leaderboard .spotlight-left {
+    position: absolute;
+    width: 400px;
+    height: 1000px;
+    left: 5px;
+    top: -40px;
+    background: linear-gradient(transparent, rgba(255, 215, 0, 0.3));
+    transform: rotate(45deg);
+    filter: blur(15px);
+    pointer-events: none;
+    z-index: 0;
+    animation: fadeInOutLeft 7s infinite ease-in-out;
+}
+
+.final-leaderboard .spotlight-right {
+    position: absolute;
+    width: 400px;
+    height: 1000px;
+    right: 5px; 
+    top: -40px;
+    background: linear-gradient(transparent, rgba(255, 215, 0, 0.3));
+    transform: rotate(-45deg); 
+    filter: blur(15px);
+    pointer-events: none;
+    z-index: 0;
+    animation: fadeInOutRight 7s infinite ease-in-out;
+}
+
+@keyframes fadeInOutLeft {
+    0% {
+        opacity: 0.2; 
+        transform: rotate(45deg); 
+    }
+    25% {
+        opacity: 0.6; 
+        transform: rotate(45deg); 
+    }
+    50% {
+        opacity: 1; 
+        transform: rotate(45deg); 
+    }
+    75% {
+        opacity: 0.6; 
+        transform: rotate(45deg); 
+    }
+    100% {
+        opacity: 0.2; 
+        transform: rotate(45deg); 
+    }
+}
+
+@keyframes fadeInOutRight {
+    0% {
+        opacity: 0.2; 
+        transform: rotate(-45deg); 
+    }
+    25% {
+        opacity: 0.6; 
+        transform: rotate(-45deg); 
+    }
+    50% {
+        opacity: 1; 
+        transform: rotate(-45deg); 
+    }
+    75% {
+        opacity: 0.6; 
+        transform: rotate(-45deg); 
+    }
+    100% {
+        opacity: 0.2; 
+        transform: rotate(-45deg); 
+    }
+}
+ 

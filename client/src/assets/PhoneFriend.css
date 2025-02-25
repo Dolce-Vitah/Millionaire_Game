@@ -1,11 +1,11 @@
 .phone-friend-container {
     position: fixed;
-    width: 300px;
-    height: 400px;
-    background-color: #222;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 320px; 
+    height: 500px; 
+    background-color: #1a1a1a; 
+    border-radius: 30px; 
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); 
     text-align: center;
     color: white;
     font-family: 'Arial', sans-serif;
@@ -14,34 +14,78 @@
     justify-content: space-between;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
+    border: 2px solid #444;
+    z-index: 1000;
 }
 
 .phone-header {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 10px;
+    padding: 15px;
+    background-color: #2c2c2c; 
+    border-radius: 15px;
+    color: #ffd700; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .phone-avatar {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    background-color: #666;
-    margin: 10px auto;
+    background-color: #444; 
+    margin: 20px auto;
+    border: 3px solid #ffd700; 
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
 }
 
 .phone-message {
     font-size: 16px;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 10px;
-    min-height: 50px;
+    background-color: #2c2c2c; 
+    padding: 15px;
+    border-radius: 15px;
+    min-height: 80px; 
     line-height: 1.5;
     position: relative;
+    color: #ffffff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
     opacity: 0;
     animation: fadeIn 1s forwards 0.5s;
+}
+
+.phone-footer {
+    font-size: 14px;
+    color: #b0b0b0; 
+    padding: 10px;
+    background-color: #1a1a1a; 
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+    text-align: center;
+}
+
+.phone-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.phone-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #444; 
+    color: #ffd700; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-button:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.8); 
 }
 
 @keyframes fadeIn {

@@ -1,0 +1,140 @@
+.player-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.player-modal-content {
+    background: linear-gradient(135deg, #1a237e, #311b92); 
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+    border: 2px solid #ffd700; 
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    max-width: 450px;
+    width: 90%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.player-modal-content p {
+    font-size: 20px;
+    color: #ffd700; 
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8); 
+}
+
+.player-modal-content button {
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #1a237e; 
+    background: linear-gradient(135deg, #ffd700, #ffcc33); 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8); 
+}
+
+.player-modal-content button:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 1); 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.player-game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a237e, #311b92); 
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.double-dip-notification {
+    position: fixed;
+    bottom: 54%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+.multiplayer-options .player-correct-answer {
+    background: linear-gradient(135deg, #062b8fc7, #1a237e); 
+    border: 2px solid #ffd700; 
+    color: #ffffff; 
+    font-weight: bold;    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: turnGreen 3s linear forwards; 
+}
+
+.multiplayer-options .player-correct-answer:hover {
+    transform: scale(1.05); 
+    background: linear-gradient(135deg, #128f14, #1aaf1a);
+    box-shadow: 0px 0px 15px rgba(76, 175, 80, 1); 
+}
+
+@keyframes turnGreen {
+    0% {
+        background: linear-gradient(135deg, #062b8fc7, #1a237e); 
+        border: 2px solid #ffd700; 
+        box-shadow: 0px 0px 5px rgba(255, 215, 0, 0.8); 
+    }
+    100% {
+        background: linear-gradient(135deg, #128f14, #1aaf1a); 
+        border: 1px solid #00ff00; 
+        box-shadow: 0px 0px 15px rgba(68, 204, 73, 1); 
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+}

@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
+const WebSocket = require('ws');
 const PORT = 8080;
-
 
 const questionsRoutes = require("./routes/questionsRoutes");
 const lifelinesRoutes = require("./routes/lifelinesRoutes");
@@ -24,12 +24,15 @@ app.use("/game", gameRoutes);
 
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client")));
+    app.use(express.static(path.join(__dirname, "../client/build")));
 
     app.get("*", (req, res) => {
-        res.sendFile("index.html");
+        res.sendFile(__dirname, "../client/build", "index.html");
     });
 }
 
+const wss = new WebSocket.Server({ server });
+const { initSocketServer } = require("./services/socketHandler");
+initSocketServer(wss);
 
 server.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

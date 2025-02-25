@@ -1,11 +1,11 @@
 const API_URL = 'http://localhost:8080/game';
 
-export const startGame = async (questions) => {
+export const startGame = async (questions, milestones) => {
     const gameId = new Date().getTime();
     const response = await fetch(`${API_URL}/start`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ gameId, questions }),
+        body: JSON.stringify({ gameId, questions, milestones }),
     });
     return response.json();
 };

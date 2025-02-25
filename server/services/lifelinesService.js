@@ -54,15 +54,11 @@ function generateVotes(question) {
     return audienceVotes;
 }
 
-const useLifeline = (gameId, type, format) => {
+const useLifeline = (gameId, type) => {
     const game = getGame(gameId);
 
     const currentQuestionIndex = game.currentQuestion;
     const question = game.questions[currentQuestionIndex];
-
-    if (format === "high-risk" && type === "double-dip") {
-        return { message: "In case you are wrong, your second attempt might be the lucky one." };
-    }
 
     game.usedLifelines[type] = true;
     updateGameState(gameId, game);
@@ -75,7 +71,7 @@ const useLifeline = (gameId, type, format) => {
             const finalOptions = question.options.map((option) => 
                 (option !== correctOption ? (option !== extraOption ? null : extraOption) : correctOption));
 
-            game.questions[currentQuestionIndex].options = finalOptions;
+            game.fiftyFiftyOptions = finalOptions;
             updateGameState(gameId, game);
 
             return { options: finalOptions };
@@ -97,7 +93,7 @@ const useLifeline = (gameId, type, format) => {
         case "double-dip": {
             game.doubleDipActivated = true;
             updateGameState(gameId, game);
-            return { };
+            return { message: "You have activated the Double Dip lifeline." };
         }
     }
 }

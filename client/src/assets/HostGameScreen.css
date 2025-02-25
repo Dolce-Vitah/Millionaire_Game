@@ -1,0 +1,41 @@
+.host-buttons-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    bottom: -13%;
+    left: 118%;
+    gap: 10px;    
+}
+
+.host-buttons-container button {
+    background: linear-gradient(215deg, #16213e, #1a237e); 
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 8px;
+    border: 2px solid #ffd700; 
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 30%; 
+}
+
+.host-buttons-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8); 
+}
+
+.multiplayer-options .correct-answer {
+    background: linear-gradient(135deg, #128f14, #1aaf1a); 
+    border: 1px solid #00ff00; 
+    color: #ffffff; 
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(76, 175, 80, 0.8); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.multiplayer-options .correct-answer:hover {
+    transform: scale(1.05); 
+    background: linear-gradient(135deg, #128f14, #1aaf1a);
+    box-shadow: 0px 0px 15px rgba(76, 175, 80, 1); 
+}

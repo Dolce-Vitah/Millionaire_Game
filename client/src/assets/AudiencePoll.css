@@ -6,21 +6,25 @@
     max-width: 400px;
     margin: 20px auto;
     text-align: center;
-    background: #222;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #1a237e, #311b92); 
+    padding: 20px;
+    border-radius: 15px; 
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.5); 
     color: white;
     font-family: "Montserrat", sans-serif;
     opacity: 0;
     transform: translateY(10px);
     animation: fadeIn 1s ease-in-out forwards;
+    border: 2px solid #ffd700;
+    z-index: 100;
 }
 
 .audience-poll h3 {
-    font-size: 18px;
-    font-weight: lighter;
-    color: while;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffd700; 
+    text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8); 
+    margin-bottom: 15px;
 }
 
 .bar-container {
@@ -35,13 +39,14 @@
 }
 
 .bar-label {
-    font-size: 14px;
+    font-size: 16px;
     font-family: "Montserrat", sans-serif;
-    font-weight: lighter;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
+    color: #ffd700;
 }
 
 .bar {

@@ -1,24 +1,74 @@
 .lifelines {
     display: flex;
-    margin-top: 20px;
-    gap: 10px;
+    justify-content: center; 
+    align-items: center;      
+    gap: 10px;                
+    margin-top: 2rem; 
+}
+
+.lifelines.multiplayer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    top: 65%;
+    left: 83%;
+}
+
+.lifelines.high-risk.multiplayer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    top: 57%;
+    left: 83%;
+}
+
+.lifelines.high-risk button {
+    position: relative;
+    bottom: 950%;
+    left: 6%;
+    width: 106px;
+    height: 40px;
+    padding: 10px 20px;
+    margin: 0 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: lighter;
+    background: linear-gradient(135deg, #1a237e, #311b92);
+    color: #ffd700;
+    font-size: 18px;
+    font-weight: lighter;
+    border-radius: 20px;
+    border: 1px solid #ffd700; 
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .lifelines button {
     position: relative;
-    bottom: 250px;
-    width: 100px;
+    bottom: 950%;
+    left: 7%;
+    width: 106px;
+    height: 40px;
     padding: 10px 20px;
-    margin: 15px;
-    background: #16213e;
-    color: white;
+    margin: 0 15px;
+    font-family: "Montserrat", sans-serif;
     font-weight: lighter;
-    border: 1px solid gold;
+    background: linear-gradient(135deg, #1a237e, #311b92);
+    color: #ffd700;
+    font-size: 18px;
+    font-weight: lighter;
     border-radius: 20px;
+    border: 1px solid #ffd700; 
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .lifelines button:hover {
-    background-color: #0f3460;
+    background: linear-gradient(135deg, #1d0663, #052386); 
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
 }
 
 .lifelines button:disabled {

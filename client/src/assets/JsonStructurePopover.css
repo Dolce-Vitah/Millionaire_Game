@@ -1,0 +1,70 @@
+.popover-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.popover-content {
+  background: radial-gradient(circle at center, #1a0033, #0d001f 70%); 
+    padding: 30px 40px;
+    border-radius: 16px;
+    width: 70%;
+    max-width: 600px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: #ffd700; 
+    border: 2px solid rgba(255, 215, 0, 0.5); 
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.popover-content h3 {
+  font-size: 24px;
+  color: #ffd700; 
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5); 
+  letter-spacing: 1px;
+}
+
+.popover-content pre {
+  background: #2f1140;
+  padding: 15px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.popover-content .close-popover-button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 2px solid rgba(255, 215, 0, 0.5); 
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffd700, #ffcc33); 
+  color: #2a004f; 
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.popover-content .close-popover-button:hover {
+  background: linear-gradient(135deg, #ffcc33, #ffaa00); 
+    color: #33073d; 
+    transform: translateY(-2px); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+}

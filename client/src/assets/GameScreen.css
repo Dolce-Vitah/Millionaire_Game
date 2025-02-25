@@ -1,52 +1,240 @@
 .game-container {
     position: relative;
     display: flex;
-    background: linear-gradient(135deg, #1a0028, #3b009e, #007fff);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100hv;
-    padding: 300px;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1f2a67 0%, #000 80%); 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.game-container .question-container {
+    background-color: transparent;    
+    border: none;
+}
+
+.menu-button {
+    position: relative;
+    bottom: 58%;
+    left: 40%;
+    width: 100px;
+    background: linear-gradient(135deg, #1a237e, #311b92);
+    color: #ffd700; 
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-top: 15px;
+    border-radius: 20px;
+    border: 1px solid #ffd700; 
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-button:hover {
+    background: linear-gradient(135deg, #1d0663, #052386);
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
 }
 
 .options {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    position: absolute;
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 1px;
+    position: relative;
+    bottom: -125%;
+    left: 4%;
+    gap: 10px;
 }
 
 .options button {
     display: flex;
-    width: 400px;
+    width: 350px;
     height: 65px;
     padding: 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Montserrat", sans-serif;
     font-weight: lighter;
-    background: #16213e;
-    color: white;
-    border: 1px solid gold;
-    border-radius: 10px;
+    background: linear-gradient(135deg, #062b8fc7, #1a237e); 
+    color: #ffff; 
+    border: 2px solid #ffd700; 
+    border-radius: 12px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.options button:disabled {
+    opacity: 0.5;
+    background: linear-gradient(135deg, #3a3f7d, #1a237e);
+    color: #b0b0b0; 
+    border: 2px solid #3a3f7d;
 }
 
 .options button:hover {
-    background-color: #0f3460;
+    background: linear-gradient(135deg, #1d0663, #052386); 
+    color: #ffffff; 
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
 }
 
 .question {
-    position: absolute;
-    bottom: 250px;
-    width: 770px;
+    position: relative;
+    bottom: -120%;
+    left: 4.5%;
+    width: 670px;
     padding: 25px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Montserrat", sans-serif;
     text-align: center;
-    background: #16213e;
-    color: white;
-    border: 1px solid gold;
+    background: linear-gradient(135deg, #062b8fc7, #1a237e);
+    color: #ffffff; 
+    border: 2px solid #ffd700; 
     border-radius: 10px;
+}
+
+.fade-from-black-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 102; 
+    pointer-events: none;
+    animation: fade 2s ease forwards;
+}
+
+
+.options button.correct {
+    background: linear-gradient(135deg, #128f14, #1aaf1a); 
+    border: 1px solid #00ff00; 
+    animation: blink 1s ease-in-out infinite; 
+}
+
+.double-dip-notification {
+    position: fixed;
+    bottom: 54%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+.spotlight-left {
+    position: absolute;
+    width: 400px;
+    height: 1000px;
+    left: 5px;
+    top: -40px;
+    background: linear-gradient(transparent, rgba(255, 215, 0, 0.3));
+    transform: rotate(45deg);
+    filter: blur(15px);
+    pointer-events: none;
+    z-index: 0;
+    animation: fadeInOutLeft 7s infinite ease-in-out;
+}
+
+.spotlight-right {
+    position: absolute;
+    width: 400px;
+    height: 1000px;
+    right: 5px; 
+    top: -40px;
+    background: linear-gradient(transparent, rgba(255, 215, 0, 0.3));
+    transform: rotate(-45deg); 
+    filter: blur(15px);
+    pointer-events: none;
+    z-index: 0;
+    animation: fadeInOutRight 7s infinite ease-in-out;
+}
+
+@keyframes fadeInOutLeft {
+    0% {
+        opacity: 0.2; 
+        transform: rotate(45deg); 
+    }
+    25% {
+        opacity: 0.6; 
+        transform: rotate(45deg); 
+    }
+    50% {
+        opacity: 1; 
+        transform: rotate(45deg); 
+    }
+    75% {
+        opacity: 0.6; 
+        transform: rotate(45deg); 
+    }
+    100% {
+        opacity: 0.2; 
+        transform: rotate(45deg); 
+    }
+}
+
+@keyframes fadeInOutRight {
+    0% {
+        opacity: 0.2; 
+        transform: rotate(-45deg); 
+    }
+    25% {
+        opacity: 0.6; 
+        transform: rotate(-45deg); 
+    }
+    50% {
+        opacity: 1; 
+        transform: rotate(-45deg); 
+    }
+    75% {
+        opacity: 0.6; 
+        transform: rotate(-45deg); 
+    }
+    100% {
+        opacity: 0.2; 
+        transform: rotate(-45deg); 
+    }
+}
+ 
+@keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+}
+  
+@keyframes fade{
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
 }

@@ -4,10 +4,10 @@ const router = express.Router();
 
 
 router.post("/:lifeline", (req, res) => {
-    const { gameId, format } = req.body;
+    const { gameId } = req.body;
     const type = req.params.lifeline;
 
-    const result = useLifeline(gameId, type, format);
+    const result = useLifeline(gameId, type);
 
     res.json(result);
 });

@@ -4,27 +4,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #1a1a40, #2c2c7a, #1a1a40);
+    width: 99vw;
+    height: 97.5vh;
+    background: 
+        radial-gradient(ellipse at center, rgba(255,215,0,0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at center, rgba(138,43,226,0.15) 20%, transparent 70%),
+        linear-gradient(135deg, #000000, #08082a, #000000);
+    background-blend-mode: screen, screen, normal;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: "Montserrat", sans-serif;
     color: white;
     overflow: hidden;
     text-align: center;
 }
 
-.logo {
-    position: absolute;
-    top: 3%; 
-    left: 23%;
-    transform: translateX(-50%);
-    width: 800px; 
-    opacity: 0.9;  
-    animation: floatAnimation 4s ease-in-out infinite; 
-}
-
 .selection {
+    justify-content: center;
     position: relative;
-    top: 50px;
+    top: 26%;
     margin: 20px 0;
     z-index: 1;
 }
@@ -35,21 +34,23 @@
     margin-bottom: 10px;
 }
 
-button {
+.home-container button {
     padding: 12px 25px;
     font-size: 20px;
     cursor: pointer;
     border: none;
-    background: linear-gradient(45deg, #ffcc00, #ffaa00);
-    color: black;
+    background: linear-gradient(45deg, #ffcc00, #ffaa00, #ffa200);
+    background-size: 200% 200%;
+    color: rgb(220, 208, 141);
     font-weight: bold;
     border-radius: 10px;
-    margin: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 10px 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 
-button:hover {
+.home-container button:hover {
     background: linear-gradient(45deg, #ffaa00, #ff8800);
     transform: scale(1.05);
 }
@@ -57,30 +58,214 @@ button:hover {
 .selected {
     background: linear-gradient(45deg, #ffaa00, #ff8800);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    color: black;
+    color: rgb(220, 208, 141);
 }
 
-.start-btn {
-    position: relative;
-    top: 30px;
-    background-color: #ff4757;
-    color: black;
-    font-size: 22px;
-    padding: 15px 25px;
-    margin-top: 30px;
-    border-radius: 10px;
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50; 
 }
 
-@keyframes floatAnimation {
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.4s ease-out;
+}
+
+.home-icons {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+    z-index: 20;
+}
+
+.home-icons i {
+    font-size: 28px;
+    color: rgb(220, 208, 141);
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.home-icons i:hover {
+    color: #ffaa00;
+    transform: scale(1.1);
+}
+
+.rules-modal,
+.settings-modal, 
+.help-modal {
+    background: radial-gradient(circle at center, #1a0033, #0d001f 70%); 
+    padding: 30px 40px;
+    border-radius: 16px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.8); 
+    font-family: "Montserrat", sans-serif;
+    color: #ffd700; 
+    border: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+.rules-modal {
+    width: 650px;
+    height: 560px;
+}
+
+.settings-modal h3,
+.rules-modal h3,
+.help-modal h3 {
+    font-size: 24px;
+    text-align: center;
+    color: #ffd700; 
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5); 
+}
+
+.rules-modal p,
+.help-modal p {
+    font-size: 16px;
+    color: #ffff; 
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.settings-modal input[type="range"] {
+    width: 100%;
+    margin: 20px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #44146d; 
+    height: 8px;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.settings-modal input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 55px; 
+    height: 45px;
+    background: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    transition: transform 0.3s ease;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50%" x="50%" dominant-baseline="middle" text-anchor="middle" font-size="80" fill="%23ffd700">$</text></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.settings-modal input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.05); 
+}
+
+.settings-modal button,
+.rules-modal button,
+.help-modal button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid rgba(255, 215, 0, 0.5); 
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ffd700, #ffcc33); 
+    color: #2a004f; 
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+}
+
+.settings-modal button:hover,
+.rules-modal button:hover,
+.help-modal button:hover {
+    background: linear-gradient(135deg, #ffcc33, #ffaa00); 
+    color: #2a004f; 
+    transform: scale(1.05); 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6); 
+}
+
+.settings-modal button:active,
+.rules-modal button:active,
+.help-modal button:active {
+    transform: scale(1); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); 
+    background: linear-gradient(135deg, #ffaa00, #ff8800); 
+}
+
+.currency-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.floating-currency {
+    position: absolute;
+    top: -10vh;
+    font-size: 2rem; 
+    color: gold;
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        3px 3px 6px rgba(0, 0, 0, 0.2);
+    animation: floatCurrency 10s ease-in-out infinite;
+}
+
+.fade-out-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 101;
+    pointer-events: none;
+    animation: fadeOut 2s ease forwards;
+}
+  
+@keyframes fadeOut {
     0% {
-        transform: translateY(0);
+      opacity: 0;
+}
+    100% {
+      opacity: 1;
     }
-    50% {
-        transform: translateY(15px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes floatCurrency {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
     }
 }
-
-

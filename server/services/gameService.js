@@ -11,12 +11,12 @@ const shuffle = (array) => {
     }
   }
 
-const createGame = (gameId, questions) => {
+const createGame = (gameId, questions, milestones) => {
     games[gameId] = {
         currentQuestion: 0,
         score: 0,
         questions,
-        milestones: [5000, 100000],
+        milestones: milestones,
         usedLifelines: {
             "fifty-fifty": false,
             "ask-audience": false,

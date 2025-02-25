@@ -1,37 +1,66 @@
 .score-board {
-    position: fixed;
+    position: absolute;
     top: 50px;
-    left: 40px;
-    width: 150px;
+    left: 60px;
+    width: 160px; 
+    height: 590px; 
     text-align: center;
-    background-color: #16213e;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid gold;
+    background: linear-gradient(135deg, #13024a, #2d014e); 
+    padding: 16px;
+    border-radius: 12px; 
+    border: 2px solid #967403; 
+}
+
+.score-board.multiplayer {
+    height: 550px;
 }
 
 .score-board h3 {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 5px 0;
     font-family: "Montserrat", sans-serif;
-    color: white;
+    color: #ffd700; 
+    text-shadow: 0px 0px 5px rgba(255, 215, 0, 0.8);
 }
 
 .score-board ul {
     list-style-type: none;
-    padding: 5px 0;
+    margin: 0;
+    padding: 10px 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 .score-board li {
     color: white;
     text-align: center;
-    font-size: large;
-    padding: 1.5px;
+    font-size: 16px;
+    padding: 5.5px;
+    margin: 3px 0;
+    background: linear-gradient(135deg, #032a96, #3f1a7e); 
+    border-radius: 8px;
+    border: 1px solid #3a3f7d; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.score-board li:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5); 
 }
 
 .score-board .highlight {
     font-weight: bold;
-    color: #ffcc00;
-    background-color: #0f3460;
-    padding: 1.5px;
-    border-radius: 5px;
+    color: #ffd700; 
+    background: linear-gradient(135deg, #311b92, #4527a0); 
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid #ffd700; 
+}
+
+.score-board .milestone {
+    font-weight: bold;
+    color: #ffd700; 
+    background: linear-gradient(135deg, #d5c244, #4527a0); 
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
 }

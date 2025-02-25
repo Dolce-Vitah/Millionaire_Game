@@ -5,11 +5,12 @@
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "electron": "electron .",
-    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run electron\""  
+    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run electron\""
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "ws": "^8.18.1"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

@@ -12,27 +12,24 @@ async function createWindow() {
     console.log("React is ready! Launching Electron...");
 
     let mainWindow = new BrowserWindow({
-      width: 1200,
-      height: 800,
       webPreferences: {
         nodeIntegration: true,
       },
     });
 
-    mainWindow.loadURL(CLIENT_URL);
-    mainWindow.webContents.openDevTools(); 
+    mainWindow.maximize();
+    mainWindow.loadURL(CLIENT_URL); 
   } catch (err) {
     console.error("React did not start in time:", err);
     console.log("Trying to load built version...");
 
     let mainWindow = new BrowserWindow({
-      width: 1200,
-      height: 800,
       webPreferences: {
         nodeIntegration: true,
       },
     });
 
+    mainWindow.maximize();
     mainWindow.loadFile(path.join(__dirname, "client", "build", "index.html"));
   }
 }

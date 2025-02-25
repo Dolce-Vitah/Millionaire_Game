@@ -39,6 +39,11 @@ const PhoneFriend = ({ decision, difficulty }) => {
             <div className="phone-message">
                 {message}
             </div>
+            <div className="phone-footer">Соединение установлено...</div>
+            <div className="phone-buttons">
+                <div className="phone-button">📴</div> 
+                <div className="phone-button">🔊</div> 
+            </div>
         </div>
     );
 };
