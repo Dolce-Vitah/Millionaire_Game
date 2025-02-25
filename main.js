@@ -1,29 +1,34 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
+const { exec } = require("child_process");
 
-function createWindow() {
-    const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+let mainWindow;
+
+const startServer = () => {
+    exec("npm run server", { cwd: path.join(__dirname, "server") }, (err, stdout, stderr) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log(stdout);
+    });
+};
+
+app.whenReady().then(() => {
+    startServer();
+
+    mainWindow = new BrowserWindow({
+        width: 1200,
+        height: 800,
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
+            nodeIntegration: false,
+            contextIsolation: true,
         },
     });
 
-    win.loadFile(path.join(__dirname, "client", "public", "index.html"));
-}
-
-app.on("window-all-closed", () => {
-    if (process.platform !== "darwin") {
-        app.quit();
+    if (process.env.NODE_ENV === "development") {
+        mainWindow.loadURL("http://localhost:3000");
+    } else {
+        mainWindow.loadFile(path.join(__dirname, "client", "public", "index.html"));
     }
 });
-
-app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
-    }
-});
-
-app.whenReady().then(() => { createWindow(); })
