@@ -5,7 +5,7 @@
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "electron": "electron .",
-    "start": "concurrently \"npm run server\" \"cd client && npm start\" \"electron .\""  
+    "start": "concurrently \"cd client && npm start\" \"electron .\""  
   },
   "dependencies": {
     "cors": "^2.8.5",
