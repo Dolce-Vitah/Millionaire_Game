@@ -14,11 +14,5 @@ app.whenReady().then(() => {
         },
     });
 
-    if (process.env.NODE_ENV === "development") {
-        mainWindow.loadURL("http://localhost:3000");
-    } else {
-        mainWindow.loadFile(path.join(__dirname, "client", "public", "index.html"));
-    }
-
-    mainWindow.webContents.openDevTools();
+    mainWindow.loadURL("http://localhost:3000"); 
 });
