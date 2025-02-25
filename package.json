@@ -4,8 +4,8 @@
     "server": "cd server && node server.js",
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
-    "electron": "electron .",
-    "start": "concurrently \"cd client && npm start\" \"electron .\""  
+    "electron": "wait-on http://localhost:3000 && electron .",
+    "start": "concurrently \"npm run client\" \"npm run server\" \"npm run electron\""  
   },
   "dependencies": {
     "cors": "^2.8.5",
