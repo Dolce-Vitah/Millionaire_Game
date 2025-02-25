@@ -13,7 +13,7 @@
   },
   "main": "main.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set BROWSER=none && react-scripts start",
     "build": "react-scripts build",
     "electron": "electron .",
     "test": "react-scripts test",
