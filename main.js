@@ -4,19 +4,7 @@ const { exec } = require("child_process");
 
 let mainWindow;
 
-const startServer = () => {
-    exec("cd server && node server.js", (err, stdout, stderr) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        console.log(stdout);
-    });
-};
-
 app.whenReady().then(() => {
-    startServer();
-
     mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
