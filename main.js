@@ -11,7 +11,8 @@ function createWindow() {
         },
     });
 
-    win.loadURL("http://localhost:3000");
+    win.loadFile("./client/index.html");
+    win.webContents.openDevTools();
 }
 
 app.on("window-all-closed", () => {
