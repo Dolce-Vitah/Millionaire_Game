@@ -19,4 +19,6 @@ app.whenReady().then(() => {
     } else {
         mainWindow.loadFile(path.join(__dirname, "client", "public", "index.html"));
     }
+
+    mainWindow.webContents.openDevTools();
 });
