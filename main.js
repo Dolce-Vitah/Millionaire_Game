@@ -8,7 +8,7 @@ async function createWindow() {
   console.log("Waiting for React...");
 
   try {
-    await waitOn({ resources: [CLIENT_URL], timeout: 15000 }); 
+    await waitOn({ resources: [CLIENT_URL], timeout: 10000 }); 
     console.log("React is ready! Launching Electron...");
 
     let mainWindow = new BrowserWindow({
@@ -20,7 +20,6 @@ async function createWindow() {
     });
 
     mainWindow.loadURL(CLIENT_URL);
-    mainWindow.webContents.openDevTools(); 
   } catch (err) {
     console.error("React did not start in time:", err);
     console.log("Trying to load built version...");
