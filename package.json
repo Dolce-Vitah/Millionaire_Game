@@ -1,8 +1,9 @@
 {
   "main": "main.js",
   "scripts": {
-    "start": "concurrently \"npm run start-react\" \"npm run start-electron\"",
-    "start-react": "cd client && npm start",
+    "start": "concurrently \"npm run start-react\" \"npm run start-server\" \"npm run start-electron\"",
+    "start-react": "cd client && npm run build",
+    "start-server": "cd server && node server.js",
     "start-electron": "wait-on http://localhost:3000 && electron ."
   },
   "dependencies": {
