@@ -5,7 +5,7 @@
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "electron": "electron .",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" \"npm run electron\""  
+    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run electron\""  
   },
   "dependencies": {
     "cors": "^2.8.5",
