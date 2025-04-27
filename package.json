@@ -5,7 +5,7 @@
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "electron": "electron .",
-    "start": "\"npm run server\"",
+    "start": "node ./server/server.js",
     "postinstall": "cd client && npm install && npm run build"
   },
   "dependencies": {
