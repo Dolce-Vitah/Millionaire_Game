@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const http = require('http');
 const WebSocket = require('ws');
+const path = require('path');
 const PORT = 8080;
 
 const questionsRoutes = require("./routes/questionsRoutes");
@@ -27,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../client/build")));
 
     app.get("*", (req, res) => {
-        res.sendFile(__dirname, "../client/build", "index.html");
+        res.sendFile(path.join(__dirname, "../client/build", "index.html"));
     });
 }
 
